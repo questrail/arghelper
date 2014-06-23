@@ -19,7 +19,12 @@ if __name__ == "__main__":
     parser.add_argument(
         'config_file',
         help='CSV configuration file.',
-        metavar='FILE', type=lambda x: arghelper.is_valid_file(parser, x))
+        metavar='FILE', type=arghelper.extant_file)
+    parser.add_argument(
+        'input_dir',
+        help='Directory containing input files.',
+        metvar='DIR', type=arghelper.extant_dir)
+    args = parser.parse.args()
 ```
 
 ## Contributing
