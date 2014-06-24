@@ -1,6 +1,7 @@
 # arghelper
 
 [![Build Status][travis image]][travis link]
+[![PyPi Version][pypi ver image]][pypi ver link]
 
 arghelper is a Python package that provides functions to help with
 argparse.
@@ -8,6 +9,7 @@ argparse.
 ## Requirements
 
 - `argparse` module from the [Python Standard Library][]
+- `sys` module from the [Python Standard Library][]
 - `os` module from the [Python Standard Library][]
 
 ## Usage
@@ -82,6 +84,8 @@ a pull request.  [GitHub Flow][] is summarized as:
 [github flow]: http://scottchacon.com/2011/08/31/github-flow.html
 [LICENSE.txt]: https://github.com/matthewrankin/arghelper/blob/develop/LICENSE.txt
 [pull request]: https://help.github.com/articles/using-pull-requests
+[pypi ver image]: https://pypip.in/v/arghelper/badge.png
+[pypi ver link]: https://pypi.python.org/pypi/arghelper
 [python standard library]: https://docs.python.org/2/library/
 [scott chacon]: http://scottchacon.com/about.html
 [travis image]: https://travis-ci.org/matthewrankin/arghelper.png?branch=master
