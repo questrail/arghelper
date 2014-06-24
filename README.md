@@ -1,5 +1,7 @@
 # arghelper
 
+[![Build Status][travis image]][travis link]
+
 arghelper is a Python package that provides functions to help with
 argparse.
 
@@ -51,6 +53,7 @@ if __name__ == "__main__":
     # Process the arguments
     import arghelper
     args = arghelper.parse_config_input_output(sys.argv)
+```
 
 ## Contributing
 
@@ -81,3 +84,5 @@ a pull request.  [GitHub Flow][] is summarized as:
 [pull request]: https://help.github.com/articles/using-pull-requests
 [python standard library]: https://docs.python.org/2/library/
 [scott chacon]: http://scottchacon.com/about.html
+[travis image]: https://travis-ci.org/matthewrankin/arghelper.png?branch=master
+[travis link]: https://travis-ci.org/matthewrankin/arghelper
