@@ -16,6 +16,7 @@ from __future__ import absolute_import
 
 # Standard module imports
 import argparse
+import sys
 import os
 
 # The version as used in the setup.py
@@ -66,3 +67,34 @@ def extant_item(arg, arg_type):
         else:
             # Directory exists so return the directory name
             return arg
+
+
+def parse_config_input_output(args=sys.argv):
+    """Parse the args using the config_file, input_dir, output_dir pattern
+
+    Args:
+
+    Returns:
+        I don't know what this returns, but it looks like an object.
+
+    Raises:
+        TBD
+    """
+    # TODO(mdr): Add the ability to set the description for the ArgumentParser
+    # and the help on each positional argument via option arguments to
+    # the parse_config_input_output() function
+    parser = argparse.ArgumentParser(
+        description='Process the input files using the given config')
+    parser.add_argument(
+        'config_file',
+        help='CSV configuration file.',
+        metavar='FILE', type=extant_file)
+    parser.add_argument(
+        'input_dir',
+        help='Directory containing the input files.',
+        metavar='DIR', type=extant_dir)
+    parser.add_argument(
+        'output_dir',
+        help='Directory where the output files should be saved.',
+        metavar='DIR', type=extant_dir)
+    return parser.parse_args(args)

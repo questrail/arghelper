@@ -120,5 +120,33 @@ class TestExtantFile(TestExtantItem):
             arghelper.extant_file,
             self.existing_dir)
 
+
+class TestParseConfigInputOutput(unittest.TestCase):
+
+    def setUp(self):  # NOQA
+        self.config_file = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)),
+            'config_file.csv')
+        self.input_dir = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)),
+            'input_dir')
+        self.output_dir = os.path.join(
+            os.path.dirname(os.path.realpath(__file__)),
+            'output_dir')
+
+    def test_parse_config_input_output(self):
+        """Test the parse_config_input_output function"""
+        args = arghelper.parse_config_input_output(
+            [self.config_file,
+                self.input_dir,
+                self.output_dir])
+        self.assertEqual(args.config_file,
+                         self.config_file)
+        self.assertEqual(args.input_dir,
+                         self.input_dir)
+        self.assertEqual(args.output_dir,
+                         self.output_dir)
+
+
 if __name__ == '__main__':
     unittest.main()

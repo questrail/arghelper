@@ -5,9 +5,18 @@ argparse.
 
 ## Requirements
 
-* Python standard `os` module
+- `argparse` module from the [Python Standard Library][]
+- `os` module from the [Python Standard Library][]
 
 ## Usage
+
+`arghelper` provides functions to determine if a file or directory
+exists:
+
+- `extant_file`
+- `extant_dir`
+
+These can be used as follows:
 
 ```python
 if __name__ == "__main__":
@@ -26,6 +35,22 @@ if __name__ == "__main__":
         metvar='DIR', type=arghelper.extant_dir)
     args = parser.parse.args()
 ```
+
+A common pattern, for me at least, is to have three positional arguments
+consisting of:
+
+1. `config_file` --- A configuration file
+2. `input_dir` --- A directory containing input files to be read
+3. `output_dir` --- A directory where the output files should be saved
+
+This pattern has been abstracted to a Facade function called
+`parse_config_input_output`, which can be used as follows:
+
+```python
+if __name__ == "__main__":
+    # Process the arguments
+    import arghelper
+    args = arghelper.parse_config_input_output(sys.argv)
 
 ## Contributing
 
@@ -54,4 +79,5 @@ a pull request.  [GitHub Flow][] is summarized as:
 [github flow]: http://scottchacon.com/2011/08/31/github-flow.html
 [LICENSE.txt]: https://github.com/matthewrankin/arghelper/blob/develop/LICENSE.txt
 [pull request]: https://help.github.com/articles/using-pull-requests
+[python standard library]: https://docs.python.org/2/library/
 [scott chacon]: http://scottchacon.com/about.html
