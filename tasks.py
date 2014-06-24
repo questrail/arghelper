@@ -5,11 +5,13 @@ TESTPYPI = "https://testpypi.python.org/pypi"
 
 @task
 def lint():
+    """Run flake8 to lint code"""
     run("python setup.py flake8")
 
 
-@task(pre=['lint'])
+@task(lint)
 def test():
+    """Lint, unit test, and check setup.py"""
     run("nosetests")
     run("python setup.py check")
 
@@ -37,6 +39,7 @@ def release(start=False, finish=False, deploy=False, test=False, version=''):
                 run("git checkout master")
                 run("python setup.py register sdist upload")
                 run("git checkout develop")
+                """Run flake8 to lint code"""
         else:
             print("* Have you updated the version in arghelper.py?")
             print("* Have you updated CHANGES.md?")
