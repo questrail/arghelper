@@ -87,7 +87,7 @@ a pull request.  [GitHub Flow][] is summarized as:
 [github flow]: http://scottchacon.com/2011/08/31/github-flow.html
 [LICENSE.txt]: https://github.com/matthewrankin/arghelper/blob/develop/LICENSE.txt
 [pull request]: https://help.github.com/articles/using-pull-requests
-[pypi ver image]: https://badge.fury.io/py/arghelper.svg
+[pypi ver image]: https://badge.fury.io/py/arghelper.png
 [pypi ver link]: http://badge.fury.io/py/arghelper
 [python standard library]: https://docs.python.org/2/library/
 [scott chacon]: http://scottchacon.com/about.html
