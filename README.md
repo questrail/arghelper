@@ -2,6 +2,7 @@
 
 [![Build Status][travis image]][travis link]
 [![PyPi Version][pypi ver image]][pypi ver link]
+[![Coverage Status][coveralls image]][coveralls link]
 
 arghelper is a Python package that provides functions to help with
 argparse.
@@ -81,6 +82,8 @@ a pull request.  [GitHub Flow][] is summarized as:
 [LICENSE.txt][] file for more information.
 
 [arghelper]: https://github.com/matthewrankin/arghelper
+[coveralls image]: https://coveralls.io/repos/matthewrankin/arghelper/badge.png
+[coveralls link]: https://coveralls.io/r/matthewrankin/arghelper
 [github flow]: http://scottchacon.com/2011/08/31/github-flow.html
 [LICENSE.txt]: https://github.com/matthewrankin/arghelper/blob/develop/LICENSE.txt
 [pull request]: https://help.github.com/articles/using-pull-requests
