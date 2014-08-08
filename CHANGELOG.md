@@ -2,6 +2,13 @@
 
 This file contains all notable changes to the [arghelper][] project.
 
+## v0.2.1 - 2014-08-08
+
+### Bug Fixes
+- Fixed all links due to moving Github repo:
+  - **Old:** https://github.com/matthewrankin/arghelper
+  - **New:** https://github.com/questrail/arghelper
+
 ## v0.2 - 2014-08-08
 
 ### Enhancements

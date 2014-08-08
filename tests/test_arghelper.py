@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) 2014 The arghelper developers. All rights reserved.
-# Project site: https://github.com/matthewrankin/arghelper
+# Project site: https://github.com/questrail/arghelper
 # Use of this source code is governed by a MIT-style license that
 # can be found in the LICENSE.txt file for the project.
 """Unit tests for arghelper.py.

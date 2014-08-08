@@ -46,7 +46,7 @@ setup(
     author='Matthew Rankin',
     author_email='matthew@questrail.com',
     py_modules=['arghelper'],
-    url='https://github.com/matthewrankin/arghelper',
+    url='https://github.com/questrail/arghelper',
     license='MIT',
     classifiers=[
         'Programming Language :: Python',

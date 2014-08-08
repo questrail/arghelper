@@ -82,11 +82,11 @@ a pull request.  [GitHub Flow][] is summarized as:
 [arghelper][] is released under the MIT license. Please see the
 [LICENSE.txt][] file for more information.
 
-[arghelper]: https://github.com/matthewrankin/arghelper
+[arghelper]: https://github.com/questrail/arghelper
 [coveralls image]: http://img.shields.io/coveralls/questrail/arghelper/master.svg
 [coveralls link]: https://coveralls.io/r/questrail/arghelper
 [github flow]: http://scottchacon.com/2011/08/31/github-flow.html
-[LICENSE.txt]: https://github.com/matthewrankin/arghelper/blob/develop/LICENSE.txt
+[LICENSE.txt]: https://github.com/questrail/arghelper/blob/develop/LICENSE.txt
 [license image]: http://img.shields.io/pypi/l/arghelper.svg
 [pull request]: https://help.github.com/articles/using-pull-requests
 [pypi ver image]: http://img.shields.io/pypi/v/arghelper.svg
@@ -94,4 +94,4 @@ a pull request.  [GitHub Flow][] is summarized as:
 [python standard library]: https://docs.python.org/2/library/
 [scott chacon]: http://scottchacon.com/about.html
 [travis image]: http://img.shields.io/travis/questrail/arghelper/master.svg
-[travis link]: https://travis-ci.org/matthewrankin/arghelper
+[travis link]: https://travis-ci.org/questrail/arghelper
