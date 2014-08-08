@@ -1,10 +1,11 @@
 # arghelper
 
-[![Build Status][travis image]][travis link]
 [![PyPi Version][pypi ver image]][pypi ver link]
+[![Build Status][travis image]][travis link]
 [![Coverage Status][coveralls image]][coveralls link]
+[![License Badge][license image]][LICENSE.txt]
 
-arghelper is a Python package that provides functions to help with
+[arghelper][] is a Python (2.6+) module providing functions to help with
 argparse.
 
 ## Requirements
@@ -82,14 +83,15 @@ a pull request.  [GitHub Flow][] is summarized as:
 [LICENSE.txt][] file for more information.
 
 [arghelper]: https://github.com/matthewrankin/arghelper
-[coveralls image]: https://coveralls.io/repos/matthewrankin/arghelper/badge.png
-[coveralls link]: https://coveralls.io/r/matthewrankin/arghelper
+[coveralls image]: http://img.shields.io/coveralls/questrail/arghelper/master.svg
+[coveralls link]: https://coveralls.io/r/questrail/arghelper
 [github flow]: http://scottchacon.com/2011/08/31/github-flow.html
 [LICENSE.txt]: https://github.com/matthewrankin/arghelper/blob/develop/LICENSE.txt
+[license image]: http://img.shields.io/pypi/l/arghelper.svg
 [pull request]: https://help.github.com/articles/using-pull-requests
-[pypi ver image]: https://badge.fury.io/py/arghelper.png
-[pypi ver link]: http://badge.fury.io/py/arghelper
+[pypi ver image]: http://img.shields.io/pypi/v/arghelper.svg
+[pypi ver link]: https://pypi.python.org/pypi/arghelper
 [python standard library]: https://docs.python.org/2/library/
 [scott chacon]: http://scottchacon.com/about.html
-[travis image]: https://travis-ci.org/matthewrankin/arghelper.png?branch=master
+[travis image]: http://img.shields.io/travis/questrail/arghelper/master.svg
 [travis link]: https://travis-ci.org/matthewrankin/arghelper

@@ -18,23 +18,26 @@ def test():
 
 @task()
 def release(deploy=False, test=False, version=''):
-    """Release arghelper and deploy to PyPI
+    """Tag release, run Travis-CI, and deploy to PyPI
     """
     if test:
         run("python setup.py check")
         run("python setup.py register sdist upload --dry-run")
 
-    run("python setup.py check")
     if deploy:
+        run("python setup.py check")
         if version:
-            run("python setup.py sdist")
-            # run("git push --tags")
-            # run("git checkout master")
+            run("git checkout master")
+            run("git tag -a v{ver} -m 'v{ver}'".format(ver=version))
+            run("git push")
+            run("git push origin --tags")
             run("python setup.py register sdist upload")
-            """Run flake8 to lint code"""
     else:
-        print("* Have you updated the version in arghelper.py?")
-        print("* Have you updated CHANGES.md?")
+        print("* Have you updated the version in taffmat.py?")
+        print("* Have you updated CHANGELOG.md, README.md, and AUTHORS.md?")
         print("* Have you fixed any last minute bugs?")
         print("If you answered yes to all of the above questions,")
-        print("then run `invoke release --deploy -vX.YY`")
+        print("then run `invoke release --deploy -vX.YY` to:")
+        print("- Checkout master")
+        print("- Tag the git release with provided vX.YY version")
+        print("- Push the master branch and tags to repo")
