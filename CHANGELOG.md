@@ -2,6 +2,11 @@
 
 This file contains all notable changes to the [arghelper][] project.
 
+## v0.2.2 - 2014-08-14
+
+### Bug Fixes
+- `parse_config_input_output()` had an error causing it to fail.
+
 ## v0.2.1 - 2014-08-08
 
 ### Bug Fixes
