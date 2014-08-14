@@ -86,7 +86,7 @@ a pull request.  [GitHub Flow][] is summarized as:
 [coveralls image]: http://img.shields.io/coveralls/questrail/arghelper/master.svg
 [coveralls link]: https://coveralls.io/r/questrail/arghelper
 [github flow]: http://scottchacon.com/2011/08/31/github-flow.html
-[LICENSE.txt]: https://github.com/questrail/arghelper/blob/develop/LICENSE.txt
+[LICENSE.txt]: https://github.com/questrail/arghelper/blob/master/LICENSE.txt
 [license image]: http://img.shields.io/pypi/l/arghelper.svg
 [pull request]: https://help.github.com/articles/using-pull-requests
 [pypi ver image]: http://img.shields.io/pypi/v/arghelper.svg
