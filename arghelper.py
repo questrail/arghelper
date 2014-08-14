@@ -97,4 +97,4 @@ def parse_config_input_output(args=sys.argv):
         'output_dir',
         help='Directory where the output files should be saved.',
         metavar='DIR', type=extant_dir)
-    return parser.parse_args(args)
+    return parser.parse_args(args[1:])
