@@ -20,7 +20,7 @@ import sys
 import os
 
 # The version as used in the setup.py
-__version__ = '0.3.0'
+__version__ = '0.3.2'
 
 
 def extant_file(arg):

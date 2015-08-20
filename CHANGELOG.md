@@ -2,6 +2,11 @@
 
 This file contains all notable changes to the [arghelper][] project.
 
+## v0.3.2 - 2015-08-20
+
+### Added
+- Added coverage to test task and pip requirements.
+
 ## v0.3.0 - 2015-08-20
 
 ### Added
