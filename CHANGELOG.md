@@ -2,6 +2,13 @@
 
 This file contains all notable changes to the [arghelper][] project.
 
+## v0.3.0 - 2015-08-20
+
+### Added
+- Migrated from Travis-CI's legacy to container-based
+  infrastructure.
+- Added pandoc to Travis-CI's addons
+
 ## v0.2.3 - 2015-08-20
 
 ### Added
