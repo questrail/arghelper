@@ -2,6 +2,15 @@
 
 This file contains all notable changes to the [arghelper][] project.
 
+## v04.0 - 2016-10-03
+
+### Added
+- Added parse_config function/pattern
+
+### Modified
+- Updated dependencies
+- Started using Python3 venv for local development
+
 ## v0.3.2 - 2015-08-20
 
 ### Added
