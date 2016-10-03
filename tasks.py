@@ -36,9 +36,10 @@ def release(ctx, deploy=False, test=False, version=''):
             run("git push origin --tags")
             run("python setup.py register sdist upload")
     else:
-        print("* Have you updated the version?")
-        print("* Have you updated CHANGELOG.md, README.md, and AUTHORS.md?")
-        print("* Have you fixed any last minute bugs?")
+        print("- Have you updated the version?")
+        print("- Have you updated CHANGELOG.md, README.md, and AUTHORS.md?")
+        print("- Have you fixed any last minute bugs?")
+        print("- Have you merged changes for release into the master branch?")
         print("If you answered yes to all of the above questions,")
         print("then run `inv release --deploy -vX.YY.ZZ` to:")
         print("- Checkout master")
