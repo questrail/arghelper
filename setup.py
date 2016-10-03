@@ -1,6 +1,5 @@
 import codecs
 import os
-import re
 
 from setuptools import setup, find_packages
 
@@ -25,7 +24,7 @@ except(IOError, ImportError):
 
 setup(
     name='arghelper',
-    version='0.4.0',
+    version='0.4.1',
     description='Python argparse helper module',
     long_description=long_description,
     author='Matthew Rankin',
