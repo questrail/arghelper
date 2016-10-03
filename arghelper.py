@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Copyright (c) 2014 The arghelper developers. All rights reserved.
+# Copyright (c) 2014-2016 The arghelper developers. All rights reserved.
 # Project site: https://github.com/questrail/arghelper
 # Use of this source code is governed by a MIT-style license that
 # can be found in the LICENSE.txt file for the project.
@@ -20,7 +20,7 @@ import sys
 import os
 
 # The version as used in the setup.py
-__version__ = '0.3.2'
+__version__ = '0.4.0'
 
 
 def extant_file(arg):
@@ -73,21 +73,19 @@ def parse_config_input_output(args=sys.argv):
     """Parse the args using the config_file, input_dir, output_dir pattern
 
     Args:
+        args: sys.argv
 
     Returns:
-        I don't know what this returns, but it looks like an object.
+        The populated namespace object from parser.parse_args().
 
     Raises:
         TBD
     """
-    # TODO(mdr): Add the ability to set the description for the ArgumentParser
-    # and the help on each positional argument via option arguments to
-    # the parse_config_input_output() function
     parser = argparse.ArgumentParser(
         description='Process the input files using the given config')
     parser.add_argument(
         'config_file',
-        help='CSV configuration file.',
+        help='Configuration file.',
         metavar='FILE', type=extant_file)
     parser.add_argument(
         'input_dir',
@@ -97,4 +95,25 @@ def parse_config_input_output(args=sys.argv):
         'output_dir',
         help='Directory where the output files should be saved.',
         metavar='DIR', type=extant_dir)
+    return parser.parse_args(args[1:])
+
+
+def parse_config(args=sys.argv):
+    """Parse the args using the config_file pattern
+
+    Args:
+        args: sys.argv
+
+    Returns:
+        The populated namespace object from parser.parse_args().
+
+    Raises:
+        TBD
+    """
+    parser = argparse.ArgumentParser(
+        description='Read in the config file')
+    parser.add_argument(
+        'config_file',
+        help='Configuration file.',
+        metavar='FILE', type=extant_file)
     return parser.parse_args(args[1:])

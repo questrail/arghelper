@@ -39,7 +39,7 @@ if __name__ == "__main__":
         'input_dir',
         help='Directory containing input files.',
         metvar='DIR', type=arghelper.extant_dir)
-    args = parser.parse.args()
+    args = parser.parse_args()
 ```
 
 A common pattern, for me at least, is to have three positional arguments
@@ -57,6 +57,15 @@ if __name__ == "__main__":
     # Process the arguments
     import arghelper
     args = arghelper.parse_config_input_output(sys.argv)
+```
+
+Another common pattern is to just parse the name of a config file:
+
+```python
+if __name__ == "__main__":
+    # Process the arguments
+    import arghelper
+    args = arghelper.parse_config(sys.argv)
 ```
 
 ## Contributing
