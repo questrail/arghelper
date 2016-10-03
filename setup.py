@@ -2,7 +2,7 @@ import codecs
 import os
 import re
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -17,21 +17,6 @@ def read(*parts):
     return codecs.open(os.path.join(here, *parts), 'r').read()
 
 
-def find_version(*file_paths):
-    """Find version in source file
-
-    Read the version number from a source file.
-    Code taken from pip's setup.py
-    """
-    version_file = read(*file_paths)
-    # The version line must have the form:
-    # __version__ = 'ver'
-    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
-                              version_file, re.M)
-    if version_match:
-        return version_match.group(1)
-    raise RuntimeError("Unable to find version string.")
-
 try:
     import pypandoc
     long_description = pypandoc.convert('README.md', 'rst')
@@ -40,12 +25,12 @@ except(IOError, ImportError):
 
 setup(
     name='arghelper',
-    version=find_version('arghelper.py'),
-    description='Python arparse helper module',
+    version='0.4.0',
+    description='Python argparse helper module',
     long_description=long_description,
     author='Matthew Rankin',
     author_email='matthew@questrail.com',
-    py_modules=['arghelper'],
+    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     url='https://github.com/questrail/arghelper',
     license='MIT',
     classifiers=[

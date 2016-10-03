@@ -19,9 +19,6 @@ import argparse
 import sys
 import os
 
-# The version as used in the setup.py
-__version__ = '0.4.0'
-
 
 def extant_file(arg):
     """Facade for extant_item(arg, arg_type="file")

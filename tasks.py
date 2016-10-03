@@ -34,7 +34,8 @@ def release(ctx, deploy=False, test=False, version=''):
             run("git tag -a v{ver} -m 'v{ver}'".format(ver=version))
             run("git push")
             run("git push origin --tags")
-            run("python setup.py register sdist upload")
+            run("python setup.py sdist bdist_wheel")
+            run("twine upload --skip-existing dist/*")
     else:
         print("- Have you updated the version?")
         print("- Have you updated CHANGELOG.md, README.md, and AUTHORS.md?")
