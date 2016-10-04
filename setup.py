@@ -1,7 +1,7 @@
 import codecs
 import os
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -24,12 +24,12 @@ except(IOError, ImportError):
 
 setup(
     name='arghelper',
-    version='0.4.1',
+    version='0.4.2',
     description='Python argparse helper module',
     long_description=long_description,
     author='Matthew Rankin',
     author_email='matthew@questrail.com',
-    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    py_modules=['arghelper'],
     url='https://github.com/questrail/arghelper',
     license='MIT',
     classifiers=[

@@ -2,6 +2,11 @@
 
 This file contains all notable changes to the [arghelper][] project.
 
+## v0.4.2 - 04-Oct-16
+
+### Fixed
+- Changed back from packages to py_modules in setup.py
+
 ## v04.0 - 2016-10-03
 
 ### Added
