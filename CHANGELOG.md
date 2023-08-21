@@ -2,6 +2,11 @@
 
 This file contains all notable changes to the [arghelper][] project.
 
+## v0.5.0 - 20-Aug-23
+
+### Modified
+- Updated dependencies.
+
 ## v0.4.2 - 04-Oct-16
 
 ### Fixed

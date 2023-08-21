@@ -1,7 +1,15 @@
+# -*- coding: utf-8 -*-
+# Copyright (c) 2022–2023 The arghelper developers. All rights reserved.
+# Project site: https://github.com/questrail/arghlper
+# Use of this source code is governed by a MIT-style license that
+# can be found in the LICENSE.txt file for the project.
 import codecs
 import os
+import re
+import setuptools
 
-from setuptools import setup
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -16,34 +24,45 @@ def read(*parts):
     return codecs.open(os.path.join(here, *parts), 'r').read()
 
 
-try:
-    import pypandoc
-    long_description = pypandoc.convert('README.md', 'rst')
-except(IOError, ImportError):
-    long_description = open('README.md').read()
+def find_version(*file_paths):
+    """Find version in source file
 
-setup(
+    Read the version number from a source file.
+    Code taken from pip's setup.py
+    """
+    version_file = read(*file_paths)
+    # The version line must have the form:
+    # __version__ = 'ver'
+    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
+                              version_file, re.M)
+    if version_match:
+        return version_match.group(1)
+    raise RuntimeError("Unable to find version string.")
+
+
+setuptools.setup(
     name='arghelper',
-    version='0.4.2',
-    description='Python argparse helper module',
-    long_description=long_description,
+    version=find_version('arghelper.py'),
     author='Matthew Rankin',
     author_email='matthew@questrail.com',
     py_modules=['arghelper'],
     url='https://github.com/questrail/arghelper',
     license='MIT',
+    description='Python argparse helper module',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    requires=['numpy (>=1.22.0)'],
     classifiers=[
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'License :: OSI Approved :: MIT License',
         'Development Status :: 3 - Alpha',
         'Operating System :: OS Independent',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Libraries :: Python Modules',
-    ],
-    setup_requires=[
-        'flake8'
     ]
 )

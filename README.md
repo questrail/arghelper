@@ -70,21 +70,29 @@ if __name__ == "__main__":
 
 ## Contributing
 
-[arghelper][] is developed using [Scott Chacon][]'s [GitHub Flow][]. To
-contribute, fork [arghelper][], create a feature branch, and then submit
-a pull request.  [GitHub Flow][] is summarized as:
+Contributions are welcome! To contribute please:
 
-- Anything in the `master` branch is deployable
-- To work on something new, create a descriptively named branch off of
-  `master` (e.g., `new-oauth2-scopes`)
-- Commit to that branch locally and regularly push your work to the same
-  named branch on the server
-- When you need feedback or help, or you think the brnach is ready for
-  merging, open a [pull request][].
-- After someone else has reviewed and signed off on the feature, you can
-  merge it into master.
-- Once it is merged and pushed to `master`, you can and *should* deploy
-  immediately.
+1. Fork the repository
+2. Create a feature branch
+3. Add code and tests
+4. Pass lint and tests
+5. Submit a [pull request][]
+
+## Development Setup
+
+### Development Setup Using pyenv
+
+Use the following commands to create a Python 3.9.9 virtualenv using [pyenv][]
+and [pyenv-virtualenv][], install the requirements in the virtualenv named
+`arghelper`, and list the available [Invoke][] tasks.
+
+```bash
+$ pyenv virtualenv 3.11 arghelper
+$ pyenv activate arghelper
+$ pip install --upgrade pip
+$ pip install -r requirements.txt
+$ inv -l
+```
 
 # License
 
@@ -98,9 +106,11 @@ a pull request.  [GitHub Flow][] is summarized as:
 [LICENSE.txt]: https://github.com/questrail/arghelper/blob/master/LICENSE.txt
 [license image]: http://img.shields.io/pypi/l/arghelper.svg
 [pull request]: https://help.github.com/articles/using-pull-requests
+[pyenv]: https://github.com/pyenv/pyenv
+[pyenv-install]: https://github.com/pyenv/pyenv#installation
+[pyenv-virtualenv]: https://github.com/pyenv/pyenv-virtualenv
 [pypi ver image]: http://img.shields.io/pypi/v/arghelper.svg
 [pypi ver link]: https://pypi.python.org/pypi/arghelper
 [python standard library]: https://docs.python.org/2/library/
-[scott chacon]: http://scottchacon.com/about.html
 [travis image]: http://img.shields.io/travis/questrail/arghelper/master.svg
 [travis link]: https://travis-ci.org/questrail/arghelper

@@ -19,6 +19,8 @@ import argparse
 import sys
 import os
 
+__version__ = '0.5.0'
+
 
 def extant_file(arg):
     """Facade for extant_item(arg, arg_type="file")
