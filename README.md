@@ -5,8 +5,7 @@
 [![Coverage Status][coveralls image]][coveralls link]
 [![License Badge][license image]][LICENSE.txt]
 
-[arghelper][] is a Python (2.6+/3.2+) module providing functions to help with
-argparse.
+[arghelper][] is a Python 3.8+ module providing functions to help with argparse.
 
 ## Requirements
 
