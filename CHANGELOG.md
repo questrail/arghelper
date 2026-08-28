@@ -25,6 +25,14 @@ This file contains all notable changes to the [arghelper][] project.
 ### Modified
 - Migrated packaging and tooling to [uv][] and [Just][], matching the
   `applyaf` and `siganalysis` projects.
+- Added `ruff` to the development dependency group. `just lint`, `just fix`,
+  and `just deploy` previously relied on a globally installed `ruff` and
+  failed on a clean checkout.
+- Fixed the README: corrected the `metvar=` typo in the `add_argument()`
+  example, added the missing `import sys` to the `parse_config_input_output()`
+  and `parse_config()` examples, dropped the `sys` module from Requirements
+  (no longer imported), removed the dead Travis-fed Coveralls badge, and
+  pointed the Python Standard Library link at the Python 3 docs.
 - Moved `arghelper.py` to a `src/arghelper/` layout built with hatchling.
 - Switched the test runner to pytest and linting/formatting to ruff.
 

@@ -1,7 +1,6 @@
 # arghelper
 
 [![PyPi Version][pypi ver image]][pypi ver link]
-[![Coverage Status][coveralls image]][coveralls link]
 [![License Badge][license image]][LICENSE.txt]
 
 [arghelper][] is a Python 3.9+ module providing functions to help with argparse.
@@ -9,7 +8,6 @@
 ## Requirements
 
 - `argparse` module from the [Python Standard Library][]
-- `sys` module from the [Python Standard Library][]
 - `os` module from the [Python Standard Library][]
 
 ## Usage
@@ -38,7 +36,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "input_dir",
         help="Directory containing input files.",
-        metvar="DIR",
+        metavar="DIR",
         type=arghelper.extant_dir,
     )
     args = parser.parse_args()
@@ -57,6 +55,8 @@ This pattern has been abstracted to a Facade function called
 ```python
 if __name__ == "__main__":
     # Process the arguments
+    import sys
+
     import arghelper
 
     args = arghelper.parse_config_input_output(sys.argv)
@@ -67,6 +67,8 @@ Another common pattern is to just parse the name of a config file:
 ```python
 if __name__ == "__main__":
     # Process the arguments
+    import sys
+
     import arghelper
 
     args = arghelper.parse_config(sys.argv)
@@ -86,8 +88,9 @@ Contributions are welcome! To contribute please:
 
 ### Development Setup Using uv
 
-With [uv][], [ruff][] and [Just][] installed, development has been simplified to
-simply running [Just][] to see the available commands.
+With [uv][] and [Just][] installed, development has been simplified to
+simply running [Just][] to see the available commands. [ruff][] is a
+development dependency, so `uv` installs it for you.
 
 ```bash
 $ just
@@ -104,7 +107,7 @@ $ just deploy
 #### Development Setup on macOS
 
 ```bash
-$ brew install uv ruff just
+$ brew install uv just
 ```
 
 # License
@@ -113,8 +116,6 @@ $ brew install uv ruff just
 [LICENSE.txt][] file for more information.
 
 [arghelper]: https://github.com/questrail/arghelper
-[coveralls image]: http://img.shields.io/coveralls/questrail/arghelper/master.svg
-[coveralls link]: https://coveralls.io/r/questrail/arghelper
 [just]: https://just.systems/
 [github flow]: http://scottchacon.com/2011/08/31/github-flow.html
 [LICENSE.txt]: https://github.com/questrail/arghelper/blob/master/LICENSE.txt
@@ -124,4 +125,4 @@ $ brew install uv ruff just
 [pypi ver link]: https://pypi.python.org/pypi/arghelper
 [ruff]: https://docs.astral.sh/ruff/
 [uv]: https://docs.astral.sh/uv/
-[python standard library]: https://docs.python.org/2/library/
+[python standard library]: https://docs.python.org/3/library/
