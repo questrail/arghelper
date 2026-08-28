@@ -1,11 +1,10 @@
 # arghelper
 
 [![PyPi Version][pypi ver image]][pypi ver link]
-[![Build Status][travis image]][travis link]
 [![Coverage Status][coveralls image]][coveralls link]
 [![License Badge][license image]][LICENSE.txt]
 
-[arghelper][] is a Python 3.8+ module providing functions to help with argparse.
+[arghelper][] is a Python 3.9+ module providing functions to help with argparse.
 
 ## Requirements
 
@@ -28,16 +27,20 @@ if __name__ == "__main__":
     # Process the arguments
     import argparse
     import arghelper
-    parser = argparse.ArgumentParser(
-        description='Process the TAFFmat CET files')
+
+    parser = argparse.ArgumentParser(description="Process the TAFFmat CET files")
     parser.add_argument(
-        'config_file',
-        help='CSV configuration file.',
-        metavar='FILE', type=arghelper.extant_file)
+        "config_file",
+        help="CSV configuration file.",
+        metavar="FILE",
+        type=arghelper.extant_file,
+    )
     parser.add_argument(
-        'input_dir',
-        help='Directory containing input files.',
-        metvar='DIR', type=arghelper.extant_dir)
+        "input_dir",
+        help="Directory containing input files.",
+        metvar="DIR",
+        type=arghelper.extant_dir,
+    )
     args = parser.parse_args()
 ```
 
@@ -55,6 +58,7 @@ This pattern has been abstracted to a Facade function called
 if __name__ == "__main__":
     # Process the arguments
     import arghelper
+
     args = arghelper.parse_config_input_output(sys.argv)
 ```
 
@@ -64,6 +68,7 @@ Another common pattern is to just parse the name of a config file:
 if __name__ == "__main__":
     # Process the arguments
     import arghelper
+
     args = arghelper.parse_config(sys.argv)
 ```
 
@@ -79,18 +84,27 @@ Contributions are welcome! To contribute please:
 
 ## Development Setup
 
-### Development Setup Using pyenv
+### Development Setup Using uv
 
-Use the following commands to create a Python 3.9.9 virtualenv using [pyenv][]
-and [pyenv-virtualenv][], install the requirements in the virtualenv named
-`arghelper`, and list the available [Invoke][] tasks.
+With [uv][], [ruff][] and [Just][] installed, development has been simplified to
+simply running [Just][] to see the available commands.
 
 ```bash
-$ pyenv virtualenv 3.11 arghelper
-$ pyenv activate arghelper
-$ pip install --upgrade pip
-$ pip install -r requirements.txt
-$ inv -l
+$ just
+```
+
+#### Deploying with uv
+
+```bash
+$ just test
+$ git tag -a vX.Y.Z -m "vX.Y.Z"
+$ just deploy
+```
+
+#### Development Setup on macOS
+
+```bash
+$ brew install uv ruff just
 ```
 
 # License
@@ -101,15 +115,13 @@ $ inv -l
 [arghelper]: https://github.com/questrail/arghelper
 [coveralls image]: http://img.shields.io/coveralls/questrail/arghelper/master.svg
 [coveralls link]: https://coveralls.io/r/questrail/arghelper
+[just]: https://just.systems/
 [github flow]: http://scottchacon.com/2011/08/31/github-flow.html
 [LICENSE.txt]: https://github.com/questrail/arghelper/blob/master/LICENSE.txt
 [license image]: http://img.shields.io/pypi/l/arghelper.svg
 [pull request]: https://help.github.com/articles/using-pull-requests
-[pyenv]: https://github.com/pyenv/pyenv
-[pyenv-install]: https://github.com/pyenv/pyenv#installation
-[pyenv-virtualenv]: https://github.com/pyenv/pyenv-virtualenv
 [pypi ver image]: http://img.shields.io/pypi/v/arghelper.svg
 [pypi ver link]: https://pypi.python.org/pypi/arghelper
+[ruff]: https://docs.astral.sh/ruff/
+[uv]: https://docs.astral.sh/uv/
 [python standard library]: https://docs.python.org/2/library/
-[travis image]: http://img.shields.io/travis/questrail/arghelper/master.svg
-[travis link]: https://travis-ci.org/questrail/arghelper

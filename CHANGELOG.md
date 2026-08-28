@@ -2,6 +2,39 @@
 
 This file contains all notable changes to the [arghelper][] project.
 
+## v0.6.0 - 28-Aug-26
+
+### Fixed
+- `parse_config()` and `parse_config_input_output()` no longer bind
+  `sys.argv` as a default argument at import time. The default is now `None`
+  and `sys.argv` is read when the function is called, so callers that
+  reassign `sys.argv` are no longer silently ignored.
+- `extant_item()` now raises `ValueError` for an `arg_type` other than
+  `"file"` or `"directory"`. It previously fell through both branches and
+  returned `None`, which argparse would store in the namespace.
+
+### Changed
+- **Breaking:** `extant_file()`, `extant_dir()`, and `extant_item()` now
+  raise `argparse.ArgumentTypeError` instead of `argparse.ArgumentError`.
+  `ArgumentTypeError` is the documented exception for an argparse `type=`
+  callable, and argparse now reports the offending argument by name:
+  `error: argument FILE: The file missing.csv does not exist.` Code that
+  catches `argparse.ArgumentError` from these functions must be updated;
+  the two exceptions are unrelated classes.
+
+### Modified
+- Migrated packaging and tooling to [uv][] and [Just][], matching the
+  `applyaf` and `siganalysis` projects.
+- Moved `arghelper.py` to a `src/arghelper/` layout built with hatchling.
+- Switched the test runner to pytest and linting/formatting to ruff.
+
+### Removed
+- Removed `setup.py`, `setup.cfg`, `MANIFEST.in`, `requirements.txt`,
+  `tasks.py`, and `.travis.yml`.
+- Removed the unused `numpy` dependency declaration, which was declared via
+  the inert distutils `requires` field and never used by the module.
+- Removed the Python 2 `__future__` imports and encoding declarations.
+
 ## v0.5.2 - 20-Aug-23
 
 ### Fixed
@@ -73,3 +106,5 @@ This file contains all notable changes to the [arghelper][] project.
 - Initial release to Github. Not released to PyPI.
 
 [arghelper]: https://github.com/questrail/arghelper
+[just]: https://just.systems/
+[uv]: https://docs.astral.sh/uv/

@@ -1,0 +1,47 @@
+# pyproject.toml
+
+[project]
+name = "arghelper"
+description = "Python argparse helper module"
+readme = "README.md"
+authors = [{ name = "Matthew Rankin", email = "matthew@questrail.com" }]
+requires-python = ">=3.9"
+dependencies = []
+dynamic = ["version"]
+classifiers = [
+  'Programming Language :: Python',
+  'Programming Language :: Python :: 3',
+  'Programming Language :: Python :: 3.9',
+  'Programming Language :: Python :: 3.10',
+  'Programming Language :: Python :: 3.11',
+  'Programming Language :: Python :: 3.12',
+  'Programming Language :: Python :: 3.13',
+  'Programming Language :: Python :: 3.14',
+  'License :: OSI Approved :: MIT License',
+  'Development Status :: 4 - Beta',
+  'Operating System :: OS Independent',
+  'Intended Audience :: Developers',
+  'Topic :: Software Development :: Libraries :: Python Modules',
+]
+
+[project.urls]
+Homepage = "https://github.com/questrail/arghelper"
+Issues = "https://github.com/questrail/arghelper/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/arghelper/__init__.py"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+include = ["src"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "ty>=0.0.75",
+]

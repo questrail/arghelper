@@ -54,3 +54,11 @@ target/
 
 cover/
 .eggs/
+
+# Virtual environment
+.venv/
+.python-version
+
+# Tooling caches
+.ruff_cache/
+.pytest_cache/
