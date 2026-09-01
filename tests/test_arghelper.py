@@ -81,7 +81,14 @@ class TestExtantItem(ExtantFixtures, unittest.TestCase):
     def test_extant_item_unknown_arg_type(self):
         """Test that an unrecognized arg_type raises instead of returning None"""
         with self.assertRaises(ValueError):
-            arghelper.extant_item(self.existing_file, "flie")
+            # The Literal annotation on arg_type is what pyright objects to
+            # here, and objecting is correct: this call is the mistake the
+            # annotation exists to catch. The runtime check is what protects
+            # a caller who is not type checked, so it is still tested.
+            arghelper.extant_item(
+                self.existing_file,
+                "flie",  # pyright: ignore[reportArgumentType]
+            )
 
     def test_extant_item_error_message_names_the_item(self):
         """Test that the error message identifies the missing item"""

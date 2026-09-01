@@ -7,22 +7,36 @@
 # Standard module imports
 import argparse
 import os
+from collections.abc import Sequence
 from importlib.metadata import version
+from typing import Literal
 
 __version__ = version("arghelper")
 
+# The public surface, which is what `from arghelper import *` binds and what a
+# type checker treats as re-exported. scripts/smoke_test_wheel.py deliberately
+# keeps a list of its own rather than reading this one: a wheel checked against
+# the __all__ it ships would only be agreeing with itself.
+__all__ = [
+    "extant_dir",
+    "extant_file",
+    "extant_item",
+    "parse_config",
+    "parse_config_input_output",
+]
 
-def extant_file(arg):
+
+def extant_file(arg: str) -> str:
     """Facade for extant_item(arg, arg_type="file")"""
     return extant_item(arg, "file")
 
 
-def extant_dir(arg):
+def extant_dir(arg: str) -> str:
     """Facade for extant_item(arg, arg_type="directory")"""
     return extant_item(arg, "directory")
 
 
-def extant_item(arg, arg_type):
+def extant_item(arg: str, arg_type: Literal["file", "directory"]) -> str:
     """Determine if parser argument is an existing file or directory.
 
     This technique comes from http://stackoverflow.com/a/11541450/95592
@@ -39,7 +53,9 @@ def extant_item(arg, arg_type):
         argparse.ArgumentTypeError: If the file or directory does not exist.
             argparse catches this from a ``type=`` callable and reports it as
             a usage error naming the offending argument.
-        ValueError: If arg_type is neither "file" nor "directory".
+        ValueError: If arg_type is neither "file" nor "directory". The
+            annotation rules this out ahead of time for a caller that is type
+            checked, but the check stays for one that is not.
     """
     if arg_type == "file":
         if not os.path.isfile(arg):
@@ -57,7 +73,7 @@ def extant_item(arg, arg_type):
         )
 
 
-def parse_config_input_output(args=None):
+def parse_config_input_output(args: Sequence[str] | None = None) -> argparse.Namespace:
     """Parse the args using the config_file, input_dir, output_dir pattern
 
     Args:
@@ -92,7 +108,7 @@ def parse_config_input_output(args=None):
     return parser.parse_args(None if args is None else args[1:])
 
 
-def parse_config(args=None):
+def parse_config(args: Sequence[str] | None = None) -> argparse.Namespace:
     """Parse the args using the config_file pattern
 
     Args:

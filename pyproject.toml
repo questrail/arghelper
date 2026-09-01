@@ -22,6 +22,7 @@ classifiers = [
   'Operating System :: OS Independent',
   'Intended Audience :: Developers',
   'Topic :: Software Development :: Libraries :: Python Modules',
+  'Typing :: Typed',
 ]
 
 [project.urls]
@@ -84,6 +85,14 @@ select = [
 venvPath = "."
 venv = ".venv"
 include = ["src", "tests", "scripts"]
+# The package ships py.typed, which tells a consumer's type checker to trust
+# what it finds here rather than to treat the import as untyped. Under the
+# default "standard" mode an unannotated function satisfies pyright while
+# handing that consumer Unknown for every parameter and return, which is worse
+# than shipping no marker at all: they lose the checking and are not told.
+# Strict is what makes the marker honest, and what stops a function from
+# arriving unannotated later.
+typeCheckingMode = "strict"
 
 [dependency-groups]
 dev = [

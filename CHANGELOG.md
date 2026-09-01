@@ -4,6 +4,31 @@ This file contains all notable changes to the [arghelper][] project.
 
 ## Unreleased
 
+### Added
+
+- Type annotations on the whole public surface, and an `__all__` naming it.
+  `arghelper` has shipped `py.typed` since v0.7.0, which tells a consumer's
+  type checker to trust what it finds here rather than to treat the import
+  as untyped. Nothing was annotated, so what it found was `Unknown` for
+  every parameter and every return, and the marker made that worse than
+  shipping no marker at all: the consumer lost the checking and was not
+  told. `extant_item()` takes a `Literal["file", "directory"]`, so passing
+  anything else is now caught before it runs; the runtime `ValueError` is
+  still raised for a caller who is not type checked. The `Typing :: Typed`
+  classifier now says on PyPI what `py.typed` says in the wheel.
+
+  This annotates the contract as it already stood rather than changing it:
+  the `extant_*` functions take a `str` and return it unchanged, which is
+  what argparse passes a `type=` callable, and `parse_config()` and
+  `parse_config_input_output()` take a `Sequence[str] | None`. Nothing
+  about their behavior at runtime is different.
+
+### Changed
+
+- `typeCheckingMode = "strict"` for pyright. The default `standard` mode is
+  what let an unannotated public function pass a type check in a package
+  that claims to be typed.
+
 ### Removed
 
 - The `v0.6.0` git tag. It pointed at a commit from before the uv
