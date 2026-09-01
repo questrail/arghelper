@@ -4,6 +4,13 @@ This file contains all notable changes to the [arghelper][] project.
 
 ## Unreleased
 
+### Changed
+
+- List `369937+matthewrankin@users.noreply.github.com` as the author
+  address in `pyproject.toml`, replacing a work address. It is what
+  `Author-email` carries in the built metadata and what PyPI shows on the
+  project page, so it changes there from the next release onward.
+
 ### Removed
 
 - Support for Python 3.9, 3.10, and 3.11. `requires-python` is now
