@@ -29,6 +29,12 @@ This file contains all notable changes to the [arghelper][] project.
   what let an unannotated public function pass a type check in a package
   that claims to be typed.
 
+### Fixed
+
+- Two comments in the workflows that explained themselves by reference to a
+  dependency floor job. There has never been such a job in this repository;
+  the comments arrived with the workflows and described a sibling project's.
+
 ### Removed
 
 - The `v0.6.0` git tag. It pointed at a commit from before the uv

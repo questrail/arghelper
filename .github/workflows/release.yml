@@ -23,10 +23,10 @@ permissions:
 # itself, but this workflow publishes on its verdict, so an action that could
 # turn a red run green sits inside the same boundary.
 jobs:
-  # Publishing waits on the whole matrix and on the dependency floor job.
-  # `git push --follow-tags` starts this workflow and CI at the same time, so
-  # without that wait an upload could go out while a leg of the matrix was
-  # still running, or already red.
+  # Publishing waits on the whole of CI: every leg of the version matrix and
+  # the workflow audit. `git push --follow-tags` starts this workflow and CI at
+  # the same time, so without that wait an upload could go out while a leg of
+  # the matrix was still running, or already red.
   #
   # `$/` rather than `./`, which is what GitHub now recommends for a workflow
   # in the same repository. `./` resolves against the runner's filesystem, so

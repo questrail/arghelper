@@ -22,11 +22,10 @@ concurrency:
 permissions:
   contents: read
 
-# Each job installs its environment once, deliberately, in the step that says
-# so. Without this every `uv run` below would re-resolve and reinstall the
-# project on top of that. In the floor job it would do worse than waste time:
-# a re-sync there resolves at the default resolution and would quietly undo the
-# lowest-direct install the job exists to test.
+# Each job installs its environment once, deliberately, in the `uv sync
+# --locked` step that says so. Without this every `uv run` below would
+# re-resolve and reinstall the project on top of that, which is both slower and
+# a second resolution that nothing checks against the lock file.
 env:
   UV_NO_SYNC: "1"
 
