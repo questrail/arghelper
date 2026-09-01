@@ -23,8 +23,8 @@ lint:
 # Lint and format code and apply changes
 [group('test')]
 fix:
-  uv run ruff format
   uv run ruff check --fix
+  uv run ruff format
 
 # Test code using pytest
 [group('test')]
