@@ -4,6 +4,15 @@ This file contains all notable changes to the [arghelper][] project.
 
 ## Unreleased
 
+### Removed
+
+- The `v0.6.0` git tag. It pointed at a commit from before the uv
+  migration, one carrying no `pyproject.toml` at all, so it never marked
+  a buildable 0.6.0 and no 0.6.0 was published to PyPI. The v0.7.0 entry
+  below says it "was tagged", which held when that entry was written;
+  the tag is gone now, and v0.5.2 is still the last release on PyPI that
+  runs on Python 3.9 through 3.11.
+
 ## v0.7.0 - 2026-09-01
 
 ### Changed
