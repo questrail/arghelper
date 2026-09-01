@@ -91,5 +91,11 @@ dev = [
     "pytest>=8.3.4",
     "pyright>=1.1.411",
     "ruff>=0.16.5",
+    # zizmor needs 3.10, and this project still supports 3.9, so the lock
+    # cannot hold it unconditionally. It audits the workflows, which is work
+    # that happens on one runner and on a maintainer's machine rather than on
+    # every interpreter the package supports, so a marker costs nothing: the
+    # Workflows CI job and just lint both run on 3.13.
+    "zizmor>=1.30.0; python_version >= '3.10'",
     "pytest-cov>=7.1.0",
 ]
