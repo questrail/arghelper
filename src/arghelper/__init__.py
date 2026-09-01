@@ -7,8 +7,9 @@
 # Standard module imports
 import argparse
 import os
+from importlib.metadata import version
 
-__version__ = "0.6.0"
+__version__ = version("arghelper")
 
 
 def extant_file(arg):
