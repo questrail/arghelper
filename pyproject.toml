@@ -36,6 +36,25 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/arghelper"]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--strict-markers", "--strict-config"]
+
+[tool.coverage.run]
+source = ["arghelper"]
+branch = true
+# Coveralls maps the report onto the repository, and absolute paths from a
+# runner's checkout directory are not something it can map.
+relative_files = true
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = ["pragma: no cover", "if TYPE_CHECKING:"]
+# The suite covers every statement and branch. A floor set anywhere below
+# that would let coverage fall without anything noticing; set here, uncovered
+# code has to arrive with either a test or a deliberate edit to this line.
+fail_under = 100
+
 [tool.ruff]
 line-length = 88
 
@@ -72,4 +91,5 @@ dev = [
     "pytest>=8.3.4",
     "pyright>=1.1.411",
     "ruff>=0.16.5",
+    "pytest-cov>=7.1.0",
 ]
