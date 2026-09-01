@@ -2,7 +2,9 @@
 
 This file contains all notable changes to the [arghelper][] project.
 
-## v0.6.0 - 28-Aug-26
+## Unreleased
+
+## v0.6.0 - 2026-08-28
 
 ### Fixed
 - `parse_config()` and `parse_config_input_output()` no longer bind
@@ -43,27 +45,27 @@ This file contains all notable changes to the [arghelper][] project.
   the inert distutils `requires` field and never used by the module.
 - Removed the Python 2 `__future__` imports and encoding declarations.
 
-## v0.5.2 - 20-Aug-23
+## v0.5.2 - 2023-08-20
 
 ### Fixed
 - Fixed deployment since v0.5.0 did not deploy correctly.
 
-## v0.5.1 - 20-Aug-23
+## v0.5.1 - 2023-08-20
 
 ### Fixed
 - Fixed deployment since v0.5.0 did not deploy correctly.
 
-## v0.5.0 - 20-Aug-23
+## v0.5.0 - 2023-08-20
 
 ### Modified
 - Updated dependencies.
 
-## v0.4.2 - 04-Oct-16
+## v0.4.2 - 2016-10-04
 
 ### Fixed
 - Changed back from packages to py_modules in setup.py
 
-## v04.0 - 2016-10-03
+## v0.4.0 - 2016-10-03
 
 ### Added
 - Added parse_config function/pattern
