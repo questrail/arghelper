@@ -4,6 +4,21 @@ This file contains all notable changes to the [arghelper][] project.
 
 ## Unreleased
 
+### Removed
+
+- Support for Python 3.9, 3.10, and 3.11. `requires-python` is now
+  `>=3.12`, which is the floor the other questrail projects use. The
+  module still runs on the older three, and the suite passed on every one
+  of them when this was checked, so anyone who needs one can keep
+  installing v0.6.0: pip reads `requires-python` and will not offer a
+  later release to an interpreter it excludes.
+
+  Supporting 3.9 was not free. It held the lock file to versions of the
+  dev tools that still supported it, and [zizmor][], which audits the
+  workflows, needs 3.10 and had to be carried behind an environment
+  marker. With the floor raised the marker is gone and the tools resolve
+  to the same versions the other projects pin.
+
 ## v0.6.0 - 2026-08-28
 
 ### Fixed
@@ -118,3 +133,4 @@ This file contains all notable changes to the [arghelper][] project.
 [arghelper]: https://github.com/questrail/arghelper
 [just]: https://just.systems/
 [uv]: https://docs.astral.sh/uv/
+[zizmor]: https://docs.zizmor.sh/

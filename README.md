@@ -6,7 +6,7 @@
 [![Coverage Status][coveralls image]][coveralls link]
 [![License Badge][license image]][LICENSE.txt]
 
-[arghelper][] is a Python 3.9+ module providing functions to help with argparse.
+[arghelper][] is a Python 3.12+ module providing functions to help with argparse.
 
 ## Requirements
 
@@ -122,8 +122,8 @@ install ruff` would put a second, unpinned copy on the path for an editor
 to find, and ruff releases change how code is formatted: the editor would
 then reformat code that `ruff format --check` rejects on the next run.
 
-The suite runs on every version from 3.9 to 3.14 in [CI][ci link], which
-is what `requires-python` and the classifiers claim.
+The suite runs on 3.12, 3.13, and 3.14 in [CI][ci link], which is what
+`requires-python` and the classifiers claim.
 
 ### Releasing to PyPI
 

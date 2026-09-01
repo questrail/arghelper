@@ -8,14 +8,11 @@ readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE.txt"]
 authors = [{ name = "Matthew Rankin", email = "matthew@questrail.com" }]
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 dependencies = []
 classifiers = [
   'Programming Language :: Python',
   'Programming Language :: Python :: 3',
-  'Programming Language :: Python :: 3.9',
-  'Programming Language :: Python :: 3.10',
-  'Programming Language :: Python :: 3.11',
   'Programming Language :: Python :: 3.12',
   'Programming Language :: Python :: 3.13',
   'Programming Language :: Python :: 3.14',
@@ -91,11 +88,6 @@ dev = [
     "pytest>=8.3.4",
     "pyright>=1.1.411",
     "ruff>=0.16.5",
-    # zizmor needs 3.10, and this project still supports 3.9, so the lock
-    # cannot hold it unconditionally. It audits the workflows, which is work
-    # that happens on one runner and on a maintainer's machine rather than on
-    # every interpreter the package supports, so a marker costs nothing: the
-    # Workflows CI job and just lint both run on 3.13.
-    "zizmor>=1.30.0; python_version >= '3.10'",
+    "zizmor>=1.30.0",
     "pytest-cov>=7.1.0",
 ]
