@@ -8,6 +8,26 @@
 
 [arghelper][] is a Python 3.12+ module providing functions to help with argparse.
 
+## Installation
+
+You can install [arghelper][] either via the Python Package Index (PyPI) or from
+source.
+
+To add it to a project managed with [uv][], which records it in your
+`pyproject.toml` and lock file:
+
+```bash
+$ uv add arghelper
+```
+
+Or to install it with pip:
+
+```bash
+$ pip install arghelper
+```
+
+**Source:** https://github.com/questrail/arghelper
+
 ## Requirements
 
 - `argparse` module from the [Python Standard Library][]
