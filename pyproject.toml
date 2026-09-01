@@ -2,7 +2,7 @@
 
 [project]
 name = "arghelper"
-version = "0.7.0"
+version = "0.8.0"
 description = "Python argparse helper module"
 readme = "README.md"
 license = "MIT"

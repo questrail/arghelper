@@ -4,6 +4,8 @@ This file contains all notable changes to the [arghelper][] project.
 
 ## Unreleased
 
+## v0.8.0 - 2026-09-01
+
 ### Added
 
 - Type annotations on the whole public surface, and an `__all__` naming it.
