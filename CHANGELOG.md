@@ -4,6 +4,8 @@ This file contains all notable changes to the [arghelper][] project.
 
 ## Unreleased
 
+## v0.7.0 - 2026-09-01
+
 ### Changed
 
 - List `369937+matthewrankin@users.noreply.github.com` as the author
@@ -17,8 +19,10 @@ This file contains all notable changes to the [arghelper][] project.
   `>=3.12`, which is the floor the other questrail projects use. The
   module still runs on the older three, and the suite passed on every one
   of them when this was checked, so anyone who needs one can keep
-  installing v0.6.0: pip reads `requires-python` and will not offer a
-  later release to an interpreter it excludes.
+  installing v0.5.2, the last release published to PyPI that runs on
+  them: pip reads `requires-python` and will not offer a later release to
+  an interpreter it excludes. v0.6.0 was tagged but never reached PyPI,
+  so it is not an option.
 
   Supporting 3.9 was not free. It held the lock file to versions of the
   dev tools that still supported it, and [zizmor][], which audits the
