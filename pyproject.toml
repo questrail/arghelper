@@ -39,11 +39,11 @@ packages = ["src/arghelper"]
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
-include = ["src"]
+include = ["src", "tests"]
 
 [dependency-groups]
 dev = [
     "pytest>=8.3.4",
+    "pyright>=1.1.411",
     "ruff>=0.16.5",
-    "ty>=0.0.75",
 ]
