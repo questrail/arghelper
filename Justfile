@@ -62,9 +62,28 @@ out:
 lock:
   uv lock
 
+# Check, test, and build the distributions that CI will publish
+[group('deploy')]
+build: lint test
+  #!/usr/bin/env bash
+  set -euo pipefail
+  uv build --clear
+  # The same check the release workflow runs before it uploads, so that a
+  # packaging mistake surfaces here rather than on a tag that cannot be undone.
+  #
+  # --isolated is what makes the environment the wheel lands in a clean one.
+  # Without it uv layers the --with packages over the project's own .venv,
+  # where every dependency is already installed, and a distribution that
+  # failed to declare one would still import here.
+  uv run --isolated --no-project --with dist/*.whl \
+    python scripts/smoke_test_wheel.py "$(uv version --short)"
+
 # Check, test, build, and publish to PyPI
 [group('deploy')]
-deploy: lint test
-  rm -rf dist
-  uv build
+deploy: build
+  #!/usr/bin/env bash
+  set -euo pipefail
+  if [ -n "$(git status --porcelain)" ]; then
+    echo "Working tree is dirty" >&2; exit 1
+  fi
   uv publish

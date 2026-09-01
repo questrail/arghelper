@@ -84,7 +84,7 @@ select = [
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
-include = ["src", "tests"]
+include = ["src", "tests", "scripts"]
 
 [dependency-groups]
 dev = [
