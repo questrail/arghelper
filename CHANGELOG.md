@@ -4,6 +4,37 @@ This file contains all notable changes to the [arghelper][] project.
 
 ## Unreleased
 
+### Added
+
+- Ignore `.pypirc`. A copy holding a PyPI username and password predates the
+  move to trusted publishing, which mints a short lived credential per
+  release and leaves nothing on disk; nothing here needs the file, and
+  ignoring it keeps a leftover from being committed by accident.
+
+### Changed
+
+- `just build` and `just release` depend on `cov` rather than `test`. CI runs
+  pytest under coverage and fails below the `fail_under` floor in
+  `pyproject.toml`, so the bare suite these recipes ran left that gate as one
+  they never applied: a tree that passed locally could still be rejected on
+  push, and `just release` could tag a version CI would then refuse to publish.
+- Bring the `LICENSE.txt` copyright range up to 2026. It had stopped at
+  2014, years behind the work in the file.
+- Move the pytest floor to 9.0.3, matching the other questrail projects. The
+  suite was verified against that version before the floor moved.
+- Close the README with `## License` rather than `# License`, which had been
+  a second top level heading in a document with one title.
+
+### Removed
+
+- **Breaking:** `arghelper.__version__`. It was never read inside the package,
+  only exported, and `importlib.metadata.version("arghelper")` has been the
+  stdlib way to ask since 3.8, well below the 3.12 floor. Populating it cost
+  roughly 20 ms of a 23 ms import, since `importlib.metadata` pulls in
+  `inspect`, `zipfile`, and `email.message`, for a name that duplicated what
+  `pyproject.toml` already records. Read the version with
+  `importlib.metadata.version("arghelper")`.
+
 ## v0.8.0 - 2026-09-01
 
 ### Added

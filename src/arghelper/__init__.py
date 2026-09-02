@@ -8,10 +8,7 @@
 import argparse
 import os
 from collections.abc import Sequence
-from importlib.metadata import version
 from typing import Literal
-
-__version__ = version("arghelper")
 
 # The public surface, which is what `from arghelper import *` binds and what a
 # type checker treats as re-exported. scripts/smoke_test_wheel.py deliberately

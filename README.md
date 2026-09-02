@@ -196,7 +196,7 @@ for `arghelper` on PyPI, pointing at the `questrail/arghelper` repository,
 the `release.yml` workflow, and the `pypi` environment. It is a one time
 setup per project.
 
-# License
+## License
 
 [arghelper][] is released under the MIT license. Please see the
 [LICENSE.txt][] file for more information.
