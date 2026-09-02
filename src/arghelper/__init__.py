@@ -59,15 +59,14 @@ def extant_item(arg: str, arg_type: Literal["file", "directory"]) -> str:
             raise argparse.ArgumentTypeError(f"The file {arg} does not exist.")
         # File exists so return the filename
         return arg
-    elif arg_type == "directory":
+    if arg_type == "directory":
         if not os.path.isdir(arg):
             raise argparse.ArgumentTypeError(f"The directory {arg} does not exist.")
         # Directory exists so return the directory name
         return arg
-    else:
-        raise ValueError(
-            f'arg_type must be either "file" or "directory", not {arg_type!r}.'
-        )
+    raise ValueError(
+        f'arg_type must be either "file" or "directory", not {arg_type!r}.'
+    )
 
 
 def parse_config_input_output(args: Sequence[str] | None = None) -> argparse.Namespace:
